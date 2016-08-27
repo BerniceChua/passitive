@@ -1,5 +1,16 @@
 # Passitive
 
+How to run in your local environment:
+
+Step 1:
+
+`npm install electron-prebuilt -g`
+
+If you receive an EACCES error read this guide:  
+   
+  [https://docs.npmjs.com/getting-started/fixing-npm-permissions](https://do  
+  cs.npmjs.com/getting-started/fixing-npm-permissions)
+  
 
 ## Contributor List (In Alphabetical Order)
 - Mohamed Hayibor
