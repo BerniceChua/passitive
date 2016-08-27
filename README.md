@@ -13,4 +13,4 @@
 License
 ----
 
-MIT[LICENSE]
+[MIT](https://github.com/BerniceChua/passitive/blob/master/LICENSE)
