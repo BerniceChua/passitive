@@ -37,4 +37,20 @@ body {
   /* Smoother startup */
   animation: fadein 0.5s; }
 
+.overlay {
+  position: fixed;
+  width: 95%;
+  height: 20em;
+  left: auto;
+  top: 0;
+  margin: 1em auto;
+  z-index: 1000000;
+  background-color: pink; }
+
+.put-at-bottom-middle {
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  float: bottom; }
+
 /*# sourceMappingURL=main.css.map */
