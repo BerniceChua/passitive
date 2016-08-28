@@ -39,18 +39,23 @@ body {
 
 .overlay {
   position: fixed;
-  width: 95%;
-  height: 20em;
+  width: 96%;
+  height: 96%;
   left: auto;
+  right: auto;
   top: 0;
   margin: 1em auto;
   z-index: 1000000;
-  background-color: pink; }
+  background-color: pink;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75); }
 
 .put-at-bottom-middle {
-  bottom: 0;
+  top: 0;
+  right: 0;
   position: absolute;
   text-align: center;
-  float: bottom; }
+  float: right; }
 
 /*# sourceMappingURL=main.css.map */
