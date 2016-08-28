@@ -1,9 +1,10 @@
 'use strict'
 
 const {app, BrowserWindow} = require('electron')
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win
+let win = null
 
 function createWindow () {
   // Create the browser window.
@@ -52,12 +53,14 @@ app.on('activate', () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-// require("script!./jquery.unobtrusive-ajax.min.js");
+const {ipcMain} = require('electron')
+ipcMain.on('asynchronous-message', (event, arg) => {
+  console.log(arg)  // prints "ping"
+  event.sender.send('asynchronous-reply', 'pong')
+})
 
-//require()
-// const {clipboard} = require('electron')
-// clipboard.writeText('Example String', 'selection')
-// console.log(clipboard.readText('selection'))
+ipcMain.on('synchronous-message', (event, arg) => {
+  console.log(arg)  // prints "ping"
+  event.returnValue = 'pong'
+})
 
-// clipboard.writeText(text, String)
-// clipboard.readText(String)
