@@ -4,40 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Passitive</title>
-<!-- 
-
-
-<script>
-window.nodeRequire = require;
-delete window.require;
-delete window.exports;
-delete window.module;
-</script>
-<script type="text/javascript" src="jquery.unobtrusive-ajax.min.js"></script>
-    <script type="text/javascript" src="test-ajax.js"></script> -->
-
+    <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <h1 class="center-words">Passitive</h1>
 
+    <div id='retrieve-pw' class='mainMenuButtons center-words'>Retrieve Passwords</div>
+    <div id='add-pw' class='mainMenuButtons center-words'>Add/Update Password</div>
+    <div id='bulk-add-pw' class='mainMenuButtons center-words'>Bulk-Add Passwords</div>
 
-    <p>Testing 'clipboard'</p>
-
-    <form id='submit-words' method="get">
+    <p class="center-words">Testing 'clipboard'</p>    
+    <form class="center-words" id='submit-words' method="get">
       <label>Type something! ^_^  <input id='answer' type="text" name="words"/></label><br />
       <input type="submit" value="Submit" />
     </form>
+
+    <p>We are using node <script>document.write(process.versions.node)</script>, 
+      Chrome <script>document.write(process.versions.chrome)</script>,
+      and Electron <script>document.write(process.versions.electron)</script>
+    </p>
   </body>
 
+    <script type="text/javascript">
+      const {ipcRenderer} = require('electron')
+      console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
+
+      ipcRenderer.on('asynchronous-reply', (event, arg) => {
+        console.log(arg) // prints "pong"
+      })
+      ipcRenderer.send('asynchronous-message', 'ping')
+
+
+      const {dialog} = require('electron').remote
+console.log(dialog)
+    </script>
 
 
 
     <script>if (typeof module === 'object') { window.module = module; module = undefined; } </script>
     <script src="./jquery.unobtrusive-ajax.min.js"></script>
     <script src="./test-ajax.js"></script>
+    <script src="./click-logic.js"></script>
+
     <script>if (window.module) module = window.module;</script>
 
 
