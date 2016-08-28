@@ -55,7 +55,7 @@ function addPWOverlay() {
 }
 
 let $addPWDiv = $( 
-  "<div id='object1' class='overlay'><p class='center-words'>Put Password Here</p><form class='center-words' id='submit-words' method='get'><label>login  <input id='login' type='text' name='login'/></label><br /><label>password  <input id='password' type='text' name='password'/></label><br /><input type='submit' value='Submit' /></form></div>" )
+  "<div id='addDiv' class='overlay'><p class='center-words'>Put Password Here</p><form class='center-words' id='submit-words' method='get'><label>login  <input id='login' type='text' name='login'/></label><br /><label>password  <input id='password' type='text' name='password'/></label><br /><input type='submit' value='Submit' /></form></div>" )
 
 function retrievePWOverlay() {
   $('body').append( $retrievePWDiv )
