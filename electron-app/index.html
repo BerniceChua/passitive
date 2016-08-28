@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Passitive</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <h1 class="center-words">Passitive</h1>
+
+    <div id='retrieve-pw' class='mainMenuButtons center-words'>Retrieve</div>
+    <div id='add-pw' class='mainMenuButtons center-words'>Add</div>
+    <div id='bulk-add-pw' class='mainMenuButtons center-words'>Bulk-Add</div>
+
+<!--     <p class='center-words'>Testing 'clipboard'</p>    
+    <form class='center-words' id='submit-words' method='get'>
+      <label>login  <input id='login' type='text' name='login'/></label><br />
+      <label>password  <input id='password' type='text' name='password'/></label><br />
+      <input type='submit' value='Submit' />
+    </form> -->
+
+  </body>
+
+    <script type="text/javascript">
+      const {ipcRenderer} = require('electron')
+      console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
+
+      ipcRenderer.on('asynchronous-reply', (event, arg) => {
+        console.log(arg) // prints "pong"
+      })
+      ipcRenderer.send('asynchronous-message', 'ping')
+
+    </script>
+
+
+
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; } </script>
+    <script src="./jquery.unobtrusive-ajax.min.js"></script>
+    <script src="./test-ajax.js"></script>
+    <script src="./click-logic.js"></script>
+
+    <script>if (window.module) module = window.module;</script>
+
+
+</html>

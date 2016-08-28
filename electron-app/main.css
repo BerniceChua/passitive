@@ -1,0 +1,67 @@
+@import "https://fonts.googleapis.com/css?family=Exo+2";
+body {
+  font-family: 'Exo 2', sans-serif; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.mainMenuButtons {
+  background-color: #9ACD32;
+  border-radius: 10px;
+  padding: 1em;
+  width: 30%;
+  margin: 1em auto;
+  font-size: 1.5em; }
+  .mainMenuButtons:hover {
+    background-color: #82a43a; }
+  .mainMenuButtons:active {
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000; }
+
+.center-words {
+  text-align: center;
+  vertical-align: middle; }
+
+.app {
+  /* Disable text selection, or your app will feel like a web page */
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  /* Cover the whole window */
+  height: 100%;
+  /* Make sure this matches the native window background color that you pass to
+   * electron.BrowserWindow({...}), otherwise your app startup will look janky. */
+  background: #282828;
+  /* Smoother startup */
+  animation: fadein 0.5s; }
+
+.overlay {
+  position: fixed;
+  width: 96%;
+  height: 96%;
+  left: auto;
+  right: auto;
+  top: 0;
+  margin: 1em auto;
+  z-index: 1000000;
+  background-color: pink;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75); }
+
+.put-at-bottom-middle {
+  top: 0;
+  right: 0;
+  position: absolute;
+  text-align: center;
+  float: right; }
+
+.larger-font {
+  font-size: 1.5em; }
+
+.left-margin {
+  margin-left: 33%; }
+
+/*# sourceMappingURL=main.css.map */
