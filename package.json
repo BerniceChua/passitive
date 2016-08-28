@@ -1,11 +1,11 @@
 {
   "name": "passitive",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "This is the easiest/secure password management system (command line tool and desktop app).",
   "main": "cli.js",
   "bin": {
-    "ms": "cli.js",
-  }
+    "pass": "cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,16 +14,22 @@
     "url": "git+https://github.com/BerniceChua/passitive.git"
   },
   "keywords": [
-     "password",
-     "easypass",
-     "encryption",
-     "decryption",
-     "clipboard"
+    "password",
+    "easypass",
+    "encryption",
+    "decryption",
+    "clipboard"
   ],
   "author": "BerniceChua && Mohamed <see readme for contacts>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/BerniceChua/passitive/issues"
   },
-  "homepage": "https://github.com/BerniceChua/passitive#readme"
+  "homepage": "https://github.com/BerniceChua/passitive#readme",
+  "dependencies": {
+    "conf": "^0.11.2",
+    "meow": "^3.7.0",
+    "simple-encryptor": "^1.1.0",
+    "to-clipboard": "^0.2.0"
+  }
 }
