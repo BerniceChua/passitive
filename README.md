@@ -1,6 +1,11 @@
 # Passitive
 
-How to run in your local environment:
+This is the easiest/secure password management system (command line tool and desktop app). Passitive meets both goals of data persistence and strong security.
+
+All encrypted passwords are stored on your computer. The passwords are only decrypted when needed and will only last on the clipboard for no more than 5s.
+
+
+### How to run Electron app in your local environment:
 
 Step 1:
 
@@ -16,7 +21,11 @@ NOTES:
 script-loader is important, so that jQuery can run.
 
 
-## Contributor List (In Alphabetical Order)
+### Extras features to build:
+
+- Ability to encrypt and set (save) a bunch of passwords at once (JSON, csv, text files).
+
+## Contributor List
 - Mohamed Hayibor
   - [GitHub](https://github.com/mohamedhayibor)
   - [LinkedIn](https://www.linkedin.com/in/mohamedhayibor)
@@ -28,4 +37,4 @@ script-loader is important, so that jQuery can run.
 License
 ----
 
-MIT[LICENSE]
+[MIT](https://github.com/BerniceChua/passitive/blob/master/LICENSE)
