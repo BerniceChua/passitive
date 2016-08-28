@@ -45,18 +45,24 @@ $('#retrieve-pw').click(function(event) {
 
   retrievePWOverlay()
 
-  let getPWs = JSON.stringify(fs.readFile('../exampleJson.json', function (err, data) {
+  let getPWs = JSON.parse(fs.readFileSync('../exampleJson.json'));
+
+    /*
+    , function (err, data) {
     if (err) {
       return console.error(err);
     }
-    console.log("Asynchronous read: " + data.toString());
+    */
 
-    let accountNames = data.toString()
-    console.log( $('#retrieveDiv') )
-    for( let key in accountNames) {
-        $("#retrieveDiv").append("<li>" + accountNames[key] + "</li>");
-    }
-  }));
+
+  console.log("Asynchronous read: " + getPWs);
+
+  
+  console.log( $('#retrieveDiv') )
+  for( let key in getPWs) {
+    $("#retrieveDiv").append("<li class='larger-font left-margin'>" + key + "<i class='material-icons w3-xxxlarge'>edit</i><i class='material-icons w3-xxxlarge'>delete</i></li>");
+  }
+
 
   let $closePopup = $('body').find('.material-icons')
   console.log( $closePopup )
@@ -67,6 +73,7 @@ $('#retrieve-pw').click(function(event) {
     
     $('#retrieveDiv').remove()
   })
+
 }); 
 
 
@@ -82,4 +89,4 @@ function retrievePWOverlay() {
 }
 
 let $retrievePWDiv = $( 
-  "<div id='retrieveDiv' class='overlay'><p class='center-words'>List Of Passwords Here</p><p><i class='material-icons w3-xxxlarge put-at-bottom-middle'>close</i></p></div>" )
+  "<div id='retrieveDiv' class='overlay'><p class='center-words larger-font'>All Passwords</p><p><i class='material-icons w3-xxxlarge put-at-bottom-middle'>close</i></p></div>" )
