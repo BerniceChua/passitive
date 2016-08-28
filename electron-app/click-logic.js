@@ -1,4 +1,3 @@
-
 var fs = require('fs'); // Load the File System to execute our common tasks (CRUD)
 
 const {dialog} = require('electron').remote
@@ -42,9 +41,22 @@ $('#add-pw').click(function(event) {
 
 $('#retrieve-pw').click(function(event) {
   event.preventDefault();
-  console.log("clicked 'add-pw")
+  console.log("clicked 'retrieve-pw")
 
   retrievePWOverlay()
+
+  let getPWs = JSON.stringify(fs.readFile('../exampleJson.json', function (err, data) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log("Asynchronous read: " + data.toString());
+
+    let accountNames = data.toString()
+    console.log( $('#retrieveDiv') )
+    for( let key in accountNames) {
+        $("#retrieveDiv").append("<li>" + accountNames[key] + "</li>");
+    }
+  }));
 
   let $closePopup = $('body').find('.material-icons')
   console.log( $closePopup )
