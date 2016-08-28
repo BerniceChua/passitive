@@ -11,6 +11,10 @@ If you receive an EACCES error read this guide:
   [https://docs.npmjs.com/getting-started/fixing-npm-permissions](https://do  
   cs.npmjs.com/getting-started/fixing-npm-permissions)
   
+NOTES:
+
+script-loader is important, so that jQuery can run.
+
 
 ## Contributor List (In Alphabetical Order)
 - Mohamed Hayibor
