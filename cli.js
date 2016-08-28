@@ -10,7 +10,11 @@ const store = new Conf();
 
 var key = 'real secret keys should be long and random. Ours is the most private :)';
  
-var encryptor = require('simple-encryptor')(key);
+var encryptor = require('simple-encryptor')({
+  key: key,
+  hmac: false,
+  debug: true
+});
 
 const cli = meow(`
   To set password:
@@ -32,13 +36,19 @@ let input = cli.input;
 // when then user wants the password back only > 1 argument is needed
 if (input.length == 1) {
   let account = input.join('').trim();
+  // testing out account
+  console.log(`account ${ account }, length: ${ account.length }`);
+
   if (store.has(account) ) {
+    console.log('inside store logic');
     let plainTextPassword = store.get(account);
     // piping the plain password for only 5s then
     toClipboard.sync( plainTextPassword );
-    setTimeout( function() {
-      toClipboard.sync('Nothing to see really.');
-    }, 5 * 1000);
+/*    setTimeout( function() {
+      console.log('inside timeout');
+      process.exit(1);
+    }, 5 * 1000); */
+    toClipboard('Nothing to see really.', function () { } );
   } else {
     // warn user then exit
     console.log(`
@@ -64,3 +74,7 @@ store.set(account, encryptedPassword);
 console.log( plainPassword );
 
 console.log("encrypted: ", encryptedPassword);
+
+let test_store = store.get(account);
+
+console.log('store retrieval: >', test_store);
