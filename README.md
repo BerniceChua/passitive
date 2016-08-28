@@ -1,5 +1,13 @@
 # Passitive
 
+This is the easiest/secure password management system (command line tool and desktop app). Passitive meets both goals of data persistence and strong security.
+
+All encrypted passwords are stored on your computer. The passwords are only decrypted when needed and will only last on the clipboard for no more than 5s.
+
+
+Extras features to build:
+
+- Ability to encrypt and set (save) a bunch of passwords at once (JSON, csv, text files).
 
 ## Contributor List (In Alphabetical Order)
 - Mohamed Hayibor
