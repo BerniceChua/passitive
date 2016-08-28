@@ -5,11 +5,27 @@ This is the easiest/secure password management system (command line tool and des
 All encrypted passwords are stored on your computer. The passwords are only decrypted when needed and will only last on the clipboard for no more than 5s.
 
 
-Extras features to build:
+### How to run Electron app in your local environment:
+
+Step 1:
+
+`npm install electron-prebuilt -g`
+
+If you receive an EACCES error read this guide:  
+   
+  [https://docs.npmjs.com/getting-started/fixing-npm-permissions](https://do  
+  cs.npmjs.com/getting-started/fixing-npm-permissions)
+  
+NOTES:
+
+script-loader is important, so that jQuery can run.
+
+
+### Extras features to build:
 
 - Ability to encrypt and set (save) a bunch of passwords at once (JSON, csv, text files).
 
-## Contributor List (In Alphabetical Order)
+## Contributor List
 - Mohamed Hayibor
   - [GitHub](https://github.com/mohamedhayibor)
   - [LinkedIn](https://www.linkedin.com/in/mohamedhayibor)
